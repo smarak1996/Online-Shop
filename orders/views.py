@@ -4,7 +4,9 @@ from .forms import OrderCreateForm
 from cart.cart import Cart
 from .tasks import order_created
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def order_create(request):
     cart = Cart(request)
     if request.method == 'POST':

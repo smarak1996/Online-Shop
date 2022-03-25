@@ -1,0 +1,1 @@
+defaultappconfig = 'payment.apps.PaymentConfig'
