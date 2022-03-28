@@ -9,7 +9,7 @@ Checkout
 <div class="col-lg-3 ml-2 form-group ">
 <form action="." method="post" class="order-form" style="margin-left: 15px; border: 1px solid black; padding: 15px; border-radius: 10px;">
     {{ form.as_p }}
-<p><input type="submit" value="Place order" class="btn btn-primary btn-block"></p>
+<p><input type="submit" value="Place order" class="btn btn-primary btn-block" style="margin-top: 20px;"></p>
 {% csrf_token %}
 </form>
 </div>
@@ -24,15 +24,15 @@ Checkout
 
     </li>
     {% endfor %}
-    <!-- {% if cart.coupon %}
+    {% if cart.coupon %}
 <li>
 "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
 <span class="float-right">- ${{ cart.get_discount|floatformat:"2" }}</span>
 </li>
-{% endif %} -->
+{% endif %}
+<hr>
     </ul>
-   <p class="float-right">Total: ${{ cart.get_total_price }}</p>
-    <!-- <p class="float-right">Total: ${{ cart.get_total_price_after_discount|floatformat:"2" }}</p> -->
+       <p class="float-right">Total: ${{ cart.get_total_price_after_discount|floatformat:"2" }}</p>
     </div>
 </div>
 {% endblock %}
